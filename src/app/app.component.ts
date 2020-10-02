@@ -1,17 +1,12 @@
 import {Component} from '@angular/core';
-import {Test} from "./child.component";
 
 @Component({
     selector: 'purchase-app',
     template: `
-        <h2>Количество кликов: {{clicks}}</h2>
-        <child-comp (onChanged)="onChanged($event)"></child-comp>
+        <child-comp [(userName)]="name"></child-comp>
+        <div>Выбранное имя: {{name}}</div>
     `
 })
 export class AppComponent {
-    clicks: number = 0;
-
-    onChanged(increased: Test) {
-        this.clicks += increased.count;
-    }
+    name: string = "Tom";
 }

@@ -6,7 +6,6 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
-    "strict": true,
     "module": "esnext",
     "moduleResolution": "node",
     "target": "es2015",

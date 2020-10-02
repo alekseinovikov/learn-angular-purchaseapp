@@ -1,27 +1,20 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
-export class Test {
-    constructor(public count: number) {
-    }
-}
 
 @Component({
     selector: 'child-comp',
     template: `
-        <button (click)="change(true)">+</button>
-        <button (click)="change(false)">-</button>
+        <input [ngModel]="userName" (ngModelChange)="onNameChange($event)"/>
     `
 })
 export class ChildComponent {
 
-    @Output() onChanged: EventEmitter<Test> = new EventEmitter<Test>();
+    @Input() userName: string;
+    @Output() userNameChange = new EventEmitter<string>();
 
-    change(increased: boolean) {
-        if (increased) {
-            this.onChanged.emit(new Test(1));
-        } else {
-            this.onChanged.emit(new Test(-1));
-        }
+    onNameChange(model: string) {
+        this.userName = model;
+        this.userNameChange.emit(model);
     }
 
 }
