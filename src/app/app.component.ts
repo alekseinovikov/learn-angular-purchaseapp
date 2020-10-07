@@ -3,10 +3,11 @@ import {Component} from '@angular/core';
 @Component({
     selector: 'purchase-app',
     template: `
-        <child-comp [(userName)]="name"></child-comp>
-        <div>Выбранное имя: {{name}}</div>
+        <div>
+            <h1>AppModule</h1>
+            <data-comp></data-comp>
+        </div>
     `
 })
 export class AppComponent {
-    name: string = "Tom";
 }
