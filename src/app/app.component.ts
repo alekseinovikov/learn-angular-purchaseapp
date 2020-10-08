@@ -5,7 +5,7 @@ import {Component} from '@angular/core';
     template: `
         <div [ngClass]="{invisible: visibility}">
             <h1>Hello Angular 10</h1>
-            <p [ngStyle]="{'font-size':'14px', 'font-family':'Segoe Print'}">
+            <p bold [ngStyle]="{'font-size':'14px', 'font-family':'Segoe Print'}">
                 Angular 10 представляет модульную архитектуру приложения
             </p>
         </div>
@@ -13,7 +13,7 @@ import {Component} from '@angular/core';
         
     `,
     styles: [`
-        .verdanaFont {
+        .verdanaFont { 
             font-size: 13px;
             font-family: Verdana;
         }
@@ -32,7 +32,7 @@ export class AppComponent {
     isVeranda = true;
     isNavy = true;
 
-    visibility: boolean = true;
+    visibility: boolean = false;
 
     toggle() {
         this.visibility = !this.visibility;
